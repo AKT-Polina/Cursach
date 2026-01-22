@@ -1,0 +1,22 @@
+[
+	{
+		"quastion": {
+			"problem": "Radio Button (выберите два варианта)",
+			"options": [
+				"вариант1",
+				"вариант2"
+			],
+			"answer": 12
+		}
+	},
+	{
+		"quastion": {
+			"problem": "Да или нет? (нет)",
+			"options": [
+				"да",
+				"нет"
+			],
+			"answer": 2
+		}
+	}
+]

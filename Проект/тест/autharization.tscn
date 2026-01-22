@@ -1,0 +1,267 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://autharization.gd" type="Script" id=1]
+[ext_resource path="res://assets/lock (1).svg" type="Texture" id=2]
+[ext_resource path="res://assets/fonts/Leto Text Sans Defect.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/человек.svg" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 25
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.541176, 0.52549, 0.52549, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Theme" id=1]
+
+[sub_resource type="DynamicFont" id=4]
+size = 25
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.541176, 0.52549, 0.52549, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="DynamicFont" id=13]
+size = 20
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=18]
+size = 25
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=10]
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.980392, 0.780392, 0.780392, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.541176, 0.52549, 0.52549, 1 )
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.964706, 0.882353, 0.882353, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.541176, 0.52549, 0.52549, 1 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.937255, 0.866667, 0.866667, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.541176, 0.52549, 0.52549, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Animation" id=19]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("VBoxContainer/infoLabel:custom_fonts/font:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 25 ]
+}
+
+[sub_resource type="Animation" id=20]
+resource_name = "def"
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("VBoxContainer/infoLabel:custom_fonts/font:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 25, -0.25, 0, 0.25, 0, 30, -0.25, 0, 0.25, 0, 25, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1, 2 )
+}
+
+[node name="Autharization" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -300.0
+margin_right = 200.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 0, 100 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+margin_right = 400.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 300, 50 )
+size_flags_horizontal = 5
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Авторизация"
+align = 1
+valign = 2
+
+[node name="Login" type="LineEdit" parent="VBoxContainer"]
+margin_left = 50.0
+margin_top = 54.0
+margin_right = 350.0
+margin_bottom = 106.0
+rect_min_size = Vector2( 300, 50 )
+size_flags_horizontal = 6
+size_flags_vertical = 0
+size_flags_stretch_ratio = 20.0
+custom_colors/font_color = Color( 0.141176, 0.12549, 0.12549, 1 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/normal = SubResource( 11 )
+right_icon = ExtResource( 4 )
+placeholder_text = "логин"
+caret_blink = true
+
+[node name="Password" type="LineEdit" parent="VBoxContainer"]
+margin_left = 50.0
+margin_top = 110.0
+margin_right = 350.0
+margin_bottom = 162.0
+rect_min_size = Vector2( 300, 50 )
+size_flags_horizontal = 4
+size_flags_vertical = 0
+size_flags_stretch_ratio = 20.0
+theme = SubResource( 1 )
+custom_colors/font_color_selected = Color( 0.141176, 0.12549, 0.12549, 1 )
+custom_colors/font_color = Color( 0.141176, 0.12549, 0.12549, 1 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/normal = SubResource( 12 )
+secret = true
+right_icon = ExtResource( 2 )
+placeholder_text = "пароль"
+__meta__ = {
+"_editor_description_": "ТЕСТтест
+"
+}
+
+[node name="rememberCheckBox" type="CheckBox" parent="VBoxContainer"]
+visible = false
+margin_left = 116.0
+margin_top = 166.0
+margin_right = 284.0
+margin_bottom = 194.0
+size_flags_horizontal = 6
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "Запомнить меня"
+
+[node name="infoLabel" type="Label" parent="VBoxContainer"]
+visible = false
+margin_top = 166.0
+margin_right = 400.0
+margin_bottom = 216.0
+rect_min_size = Vector2( 400, 50 )
+size_flags_horizontal = 4
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 18 )
+text = "info"
+align = 1
+valign = 1
+clip_text = true
+
+[node name="loginButton" type="Button" parent="VBoxContainer"]
+margin_left = 125.0
+margin_top = 223.0
+margin_right = 275.0
+margin_bottom = 273.0
+rect_min_size = Vector2( 150, 50 )
+size_flags_horizontal = 4
+size_flags_vertical = 10
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 10 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 17 )
+custom_styles/normal = SubResource( 16 )
+text = "Войти"
+
+[node name="regButton" type="Button" parent="VBoxContainer"]
+margin_left = 125.0
+margin_top = 277.0
+margin_right = 275.0
+margin_bottom = 327.0
+rect_min_size = Vector2( 150, 50 )
+size_flags_horizontal = 4
+size_flags_vertical = 2
+size_flags_stretch_ratio = 3.0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 10 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 17 )
+custom_styles/normal = SubResource( 16 )
+text = "Регистрация"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "RESET"
+playback_speed = 6.0
+anims/RESET = SubResource( 19 )
+anims/def = SubResource( 20 )
+
+[connection signal="pressed" from="VBoxContainer/loginButton" to="." method="_on_loginButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/regButton" to="." method="_on_regButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/regButton" to="." method="_on_Button_pressed"]

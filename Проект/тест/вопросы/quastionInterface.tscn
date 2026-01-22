@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://вопросы/taskPanel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://вопросы/qload.gd" type="Script" id=4]
+
+[node name="quastionUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+margin_left = 169.0
+margin_top = 106.0
+margin_right = 862.0
+margin_bottom = 527.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="taskPanel" parent="." instance=ExtResource( 1 )]

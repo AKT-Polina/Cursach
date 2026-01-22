@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="ButtonGroup" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox" type="CheckBox" parent="."]
+margin_right = 24.0
+margin_bottom = 56.0
+group = SubResource( 1 )
+
+[node name="CheckBox2" type="CheckBox" parent="."]
+margin_left = 32.0
+margin_right = 56.0
+margin_bottom = 56.0
+group = SubResource( 1 )
+
+[node name="CheckBox3" type="CheckBox" parent="."]
+margin_left = 64.0
+margin_right = 88.0
+margin_bottom = 56.0
+group = SubResource( 1 )

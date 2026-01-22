@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://menu/characterBox.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts/Leto Text Sans Defect.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/fonts/new_dynamicfont.tres" type="DynamicFont" id=4]
+[ext_resource path="res://menu/characterFile.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 15
+font_data = ExtResource( 3 )
+
+[node name="characterFile" type="Button"]
+margin_top = 46.0
+margin_right = 786.0
+margin_bottom = 153.0
+rect_min_size = Vector2( 0, 100 )
+size_flags_vertical = 0
+toggle_mode = true
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hbox" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="characterBox" type="Control" parent="hbox"]
+margin_right = 93.0
+margin_bottom = 107.0
+rect_min_size = Vector2( 93, 93 )
+mouse_filter = 2
+script = ExtResource( 2 )
+
+[node name="character" parent="hbox/characterBox" instance=ExtResource( 1 )]
+position = Vector2( 46.5, 53.5 )
+scale = Vector2( 3, 3 )
+
+[node name="characterInfo" type="VBoxContainer" parent="hbox"]
+margin_left = 97.0
+margin_right = 786.0
+margin_bottom = 107.0
+mouse_filter = 2
+size_flags_horizontal = 3
+
+[node name="name" type="Label" parent="hbox/characterInfo"]
+margin_right = 689.0
+margin_bottom = 36.0
+custom_fonts/font = ExtResource( 4 )
+text = "Имя персонажа"
+
+[node name="stats" type="RichTextLabel" parent="hbox/characterInfo"]
+margin_top = 40.0
+margin_right = 689.0
+margin_bottom = 107.0
+mouse_filter = 2
+size_flags_vertical = 3
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "статистика: ......"
+text = "статистика: ......"
+
+[connection signal="resized" from="hbox/characterBox" to="hbox/characterBox" method="_on_characterBox_resized"]

@@ -1,0 +1,84 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://вопросы/panels/CheckBoxPanel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/fonts/lineEditFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/fonts/Leto Text Sans Defect.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://вопросы/panels/taskPanel.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+font_data = ExtResource( 3 )
+
+[node name="taskPanel" type="Panel"]
+self_modulate = Color( 1, 1, 1, 0.466667 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -412.0
+margin_top = -250.0
+margin_right = 412.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 824, 500 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+quastion_array = "res://вопросы/quastion.json"
+
+[node name="Vb1" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Vb1"]
+margin_right = 824.0
+margin_bottom = 248.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 6.0
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[center]Вопрос сколько всего ... таких то интересных штук
+На картинке : [/center]
+[center][img]res://вопросы/images.png[/img][/center]
+"
+text = "Вопрос сколько всего ... таких то интересных штук
+На картинке : 
+
+"
+
+[node name="Vb2" type="VBoxContainer" parent="Vb1"]
+margin_top = 252.0
+margin_right = 824.0
+margin_bottom = 500.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 6.0
+
+[node name="CheckBoxPanel" parent="Vb1/Vb2" instance=ExtResource( 1 )]
+visible = false
+margin_top = 0.0
+margin_right = 824.0
+margin_bottom = 66.0
+
+[node name="otvet" type="Button" parent="."]
+margin_left = 724.5
+margin_top = 0.5
+margin_right = 831.5
+margin_bottom = 34.5
+custom_fonts/font = ExtResource( 2 )
+text = "ответить"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="otvet"]
+margin_left = -792.0
+margin_top = 55.0
+margin_right = -488.0
+margin_bottom = 189.0
+custom_fonts/font = SubResource( 1 )
+
+[connection signal="pressed" from="otvet" to="." method="_on_otvet_pressed"]

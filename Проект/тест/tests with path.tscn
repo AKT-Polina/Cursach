@@ -1,0 +1,158 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://delete.gd" type="Script" id=1]
+[ext_resource path="res://assets/wood.png" type="Texture" id=2]
+[ext_resource path="res://assets/skin.png" type="Texture" id=3]
+[ext_resource path="res://followpathplayer.gd" type="Script" id=4]
+[ext_resource path="res://move_button.gd" type="Script" id=5]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 195, 308, -41.5311, 24.6942, 41.5311, -24.6942, 285, 297, 0, 0, 0, 0, 341, 247, -65.1028, 11.2246, 65.1028, -11.2246, 450, 181, 0, 0, 0, 0, 665, 283, -4.71937, -50.9692, 4.71937, 50.9692, 991, 145, 159.515, -33.9795, -159.515, 33.9795, 550, 489, 91.5558, -1.88775, -91.5558, 1.88775, 257, 479, 0, 0, 0, 0, 138, 526 )
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="1p" type="Position2D" parent="."]
+position = Vector2( 190, 309 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="1p"]
+texture = ExtResource( 2 )
+
+[node name="2" type="Position2D" parent="."]
+position = Vector2( 340, 242 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="2"]
+texture = ExtResource( 2 )
+
+[node name="3p" type="Position2D" parent="."]
+position = Vector2( 538, 205 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="3p"]
+texture = ExtResource( 2 )
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2( 13, 0 )
+curve = SubResource( 1 )
+
+[node name="player" type="PathFollow2D" parent="Path2D"]
+position = Vector2( 412.161, 500.339 )
+scale = Vector2( 1, 1 )
+offset = 1590.05
+rotate = false
+script = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="Path2D/player"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
+
+[node name="text" type="RichTextLabel" parent="."]
+margin_right = 404.0
+margin_bottom = 214.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "rtrtrt"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="move_button" type="Button" parent="."]
+margin_left = 293.0
+margin_top = 183.0
+margin_right = 341.0
+margin_bottom = 228.0
+text = "move"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pos2d" type="Position2D" parent="move_button"]
+
+[node name="move_button2" type="Button" parent="."]
+margin_left = 553.0
+margin_top = 147.0
+margin_right = 601.0
+margin_bottom = 192.0
+text = "move"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pos2d" type="Position2D" parent="move_button2"]
+
+[node name="move_button3" type="Button" parent="."]
+margin_left = 758.0
+margin_top = 305.0
+margin_right = 806.0
+margin_bottom = 350.0
+text = "move"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pos2d" type="Position2D" parent="move_button3"]
+
+[node name="move_button4" type="Button" parent="."]
+margin_left = 452.0
+margin_top = 434.0
+margin_right = 500.0
+margin_bottom = 479.0
+text = "move"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pos2d" type="Position2D" parent="move_button4"]
+position = Vector2( 32, 28 )
+
+[node name="move_button5" type="Button" parent="."]
+margin_left = 158.0
+margin_top = 519.0
+margin_right = 206.0
+margin_bottom = 564.0
+text = "move"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pos2d" type="Position2D" parent="move_button5"]
+
+[node name="move_button6" type="Button" parent="."]
+margin_left = 956.0
+margin_top = 80.0
+margin_right = 1004.0
+margin_bottom = 125.0
+text = "move"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pos2d" type="Position2D" parent="move_button6"]
+
+[connection signal="cordinates" from="move_button" to="Path2D/player" method="_on_move_button_cordinates"]
+[connection signal="pressed" from="move_button" to="move_button" method="_on_move_button_pressed"]
+[connection signal="cordinates" from="move_button2" to="Path2D/player" method="_on_move_button_cordinates"]
+[connection signal="pressed" from="move_button2" to="move_button2" method="_on_move_button_pressed"]
+[connection signal="cordinates" from="move_button3" to="Path2D/player" method="_on_move_button_cordinates"]
+[connection signal="pressed" from="move_button3" to="move_button3" method="_on_move_button_pressed"]
+[connection signal="cordinates" from="move_button4" to="Path2D/player" method="_on_move_button_cordinates"]
+[connection signal="pressed" from="move_button4" to="move_button4" method="_on_move_button_pressed"]
+[connection signal="cordinates" from="move_button5" to="Path2D/player" method="_on_move_button_cordinates"]
+[connection signal="pressed" from="move_button5" to="move_button5" method="_on_move_button_pressed"]
+[connection signal="cordinates" from="move_button6" to="Path2D/player" method="_on_move_button_cordinates"]
+[connection signal="pressed" from="move_button6" to="move_button6" method="_on_move_button_pressed"]
